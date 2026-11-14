@@ -1,0 +1,20 @@
+{
+  "_comment": "安全入口示例。python 与脚本路径请替换为绝对路径；NETCLI_APPROVAL_SECRET 必须换成自己的值，不要提交到仓库。",
+  "mcpServers": {
+    "net-cli-mcp": {
+      "command": "python",
+      "args": [
+        "/绝对路径/AI-net-cli-mcp/secure_server.py"
+      ],
+      "env": {
+        "NETCLI_COMMAND_POLICY": "guarded",
+        "NETCLI_APPROVAL_MODE": "secret",
+        "NETCLI_APPROVAL_SECRET": "换成你自己的审批码",
+        "NETCLI_ALLOWED_HOSTS": "192.168.10.0/24",
+        "NETCLI_ALLOWED_SERIAL_PORTS": "COM3",
+        "NETCLI_AUDIT_LOG": "/绝对路径/audit.jsonl",
+        "NETCLI_MAX_OUTPUT_CHARS": "65536"
+      }
+    }
+  }
+}
